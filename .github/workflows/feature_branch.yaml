@@ -15,10 +15,17 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8.0'
+           python-version: '3.8.0'
       - name: Install deps
         run: make ci-setup
+      - name: AWS profile
+        uses: Fooji/create-aws-profile-action@v1
+        with:
+          profile: awsadm
+          region: sa-east-1
+          key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Run Tests
-        run: make ci-test  
+         run: make ci-test  
 
 
