@@ -123,3 +123,6 @@ class TestMercadoBitcoinAPI:
     ):
         with pytest.raises(Exception):
             mercado_bitcoin_fixture.get_data()
+
+def test_fail():
+    assert False 
