@@ -1,0 +1,9 @@
+.python-version
+.terraform*
+terraform*
+.terraform/
+*.parquet
+*.csv
+*.pyc
+.vscode/
+.venv/
