@@ -26,6 +26,6 @@ jobs:
           key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Run Tests
-         run: make ci-test  
+        run: make ci-test  
 
 
