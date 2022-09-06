@@ -1,8 +1,8 @@
 clean:
-	rm -rf day-summary *.checkpoint .pytest_cache .coverage
+	rm -rf day-summary *.checkpoint .pytest_cache .coverage .venv/
 
 init: clean
-	pip install poetry
+	pip install poetry 
 	poetry install
 
 test:

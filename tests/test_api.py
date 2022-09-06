@@ -40,13 +40,13 @@ class TestTrades:
                 "BTC",
                 datetime.datetime(2021, 2, 20),
                 datetime.datetime(2022, 1, 5),
-                "https://www.mercadobitcoin.net/api/BTC/trades/1613790000/1641351600",
+                "https://www.mercadobitcoin.net/api/BTC/trades/1613779200/1641340800",
             ),
             (
                 "BTC",
                 datetime.datetime(2021, 2, 20),
                 None,
-                "https://www.mercadobitcoin.net/api/BTC/trades/1613790000",
+                "https://www.mercadobitcoin.net/api/BTC/trades/1613779200",
             ),
         ],
     )
@@ -63,7 +63,7 @@ class TestTrades:
             Trades(coin=coin)._get_endpoint(date_start=date_start, date_to=date_to)
 
     @pytest.mark.parametrize(
-        "coin, date, expected", [("BTC", datetime.datetime(2022, 1, 5), 1641351600)]
+        "coin, date, expected", [("BTC", datetime.datetime(2022, 1, 5), 1641340800)]
     )
     def test_get_unix_date(self, coin, date, expected):
         actual = Trades(coin=coin)._get_unix_date(date=date)
