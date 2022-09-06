@@ -1,0 +1,17 @@
+{
+    "dev": {
+         "app_function": "ingestion.lambda",
+        "aws_region": "sa-east-1",
+        "profile_name": "awsadm",
+        "project_name": "api-ingestion",
+        "runtime": "python3.9",
+        "s3_bucket": "zappa-tbzditkds"
+    },
+    "events":[{
+	    "function": "ingestion.lambda.lambda_handler",
+	    "expression": "rate(3 minutes)"
+    }
+    ],
+    "memory_size":128,
+    "cloudwatch_log_level": "INFO"
+}
