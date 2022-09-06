@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "mercado bitcoin api ingestion to lambda"
 authors = ["Daniel Penalva <dkajah@gmail.com>"]
 readme = "README.md"
-packages = [{include = "mercado_bitcoin"}]
+packages = [{include = "ingestion"}]
 
 [tool.poetry.dependencies]
 python = "^3.8.0"
