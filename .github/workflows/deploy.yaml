@@ -19,9 +19,9 @@ jobs:
       - name: Install deps
         run: make ci-setup
       - name: AWS profile
-         uses: Fooji/create-aws-profile-action@v1
+        uses: Fooji/create-aws-profile-action@v1
         with:
-           profile: awsadm
+          profile: awsadm
           region: sa-east-1
           key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
