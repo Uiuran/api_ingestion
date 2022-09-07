@@ -4,7 +4,7 @@ from tempfile import NamedTemporaryFile
 from typing import List, Union
 from ingestion.Exceptions import WarningWrongDataTypeNotWritable
 from ingestion.api import MercadoBitcoinAPI
-from boto3 import Session,Client
+from boto3 import Session
 import os
 
 
