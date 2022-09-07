@@ -1,25 +1,21 @@
 [tool.poetry]
-name = "mercado-bitcoin"
+name = "api-ingestion"
 version = "0.1.0"
-description = "mercado bitcoin api ingestion to lambda"
+description = ""
 authors = ["Daniel Penalva <dkajah@gmail.com>"]
 readme = "README.md"
-packages = [{include = "ingestion"}]
+packages = [{include = "api_ingestion"}]
 
 [tool.poetry.dependencies]
-python = "^3.8.0"
+python = "^3.8"
 requests = "^2.28.1"
 logging = "^0.4.9.6"
 backoff = "^2.1.2"
 ratelimit = "^2.2.1"
-boto3 = "^1.24.66"
+boto3 = "^1.24.67"
 pynamodb = "^5.2.1"
 zappa = "^0.53.0"
 
-
-[tool.poetry.group.dev.dependencies]
-black = "^22.8.0"
-pytest = "^7.1.3"
 
 [build-system]
 requires = ["poetry-core"]
