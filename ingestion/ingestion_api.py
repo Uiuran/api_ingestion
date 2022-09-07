@@ -90,7 +90,8 @@ class DaySummaryIngestor(IngestorAPI):
 
 
 class AwsDataIngestor:
-    def __init__(self, writer, coins: List[str], default_start_date: datetime.date) -> None:
+    def __init__(self, writer, coins: List[str], default_start_date:
+            datetime.date, profile_name: str = None) -> None:
         self.dynamo_checkpoint = DynamoCheckpoints(
             model=CheckpointModel,
             report_id=self.__class__.__name__,
@@ -99,6 +100,8 @@ class AwsDataIngestor:
         self.coins = coins
         self.writer = writer
         self._checkpoint = self._load_checkpoint()
+        self.profile_name = profile_name
+
 
     def _write_checkpoint(self):
         self.dynamo_checkpoint.create_checkpoint(checkpoint_date=self._checkpoint)
@@ -123,5 +126,9 @@ class AwsDaySummaryIngestor(AwsDataIngestor):
             for coin in self.coins:
                 api = DaySummary(coin=coin)
                 data = api.get_data(date=date)
-                self.writer(coin=coin, api=api).write(data)
+                if not self.profile_name:
+                    self.writer(coin=coin, api=api).write(data)
+                else:
+                    self.writer(coin=coin, api=api,
+                            profile_name=self.profile_name).write(data)
             self._update_checkpoint(date + datetime.timedelta(days=1))

@@ -513,17 +513,17 @@ telegram = ["requests"]
 
 [[package]]
 name = "troposphere"
-version = "4.1.0"
+version = "2.7.1"
 description = "AWS CloudFormation creation library"
 category = "main"
 optional = false
-python-versions = ">=3.7.0"
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.dependencies]
-cfn-flip = ">=1.0.2"
+cfn_flip = ">=1.0.2"
 
 [package.extras]
-policy = ["awacs (>=2.0.0)"]
+policy = ["awacs (>=0.8)"]
 
 [[package]]
 name = "typing-extensions"
@@ -842,8 +842,7 @@ tqdm = [
     {file = "tqdm-4.64.1.tar.gz", hash = "sha256:5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"},
 ]
 troposphere = [
-    {file = "troposphere-4.1.0-py3-none-any.whl", hash = "sha256:89aaea840d1a4c913a49f6ad7aa2cfeb4ace158a7d59976359ac1a0bea69a533"},
-    {file = "troposphere-4.1.0.tar.gz", hash = "sha256:ed203c12ef0ffdbe3ba4388ec95db9831c76e44e673f4cb0f7a091a5bd98d416"},
+    {file = "troposphere-2.7.1.tar.gz", hash = "sha256:ea2e5f2f82c224eaa1414a008b1939aae124c3e3e1dd993301968f155b333bd7"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.3.0-py3-none-any.whl", hash = "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02"},

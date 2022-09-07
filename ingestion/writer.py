@@ -4,7 +4,7 @@ from tempfile import NamedTemporaryFile
 from typing import List, Union
 from ingestion.Exceptions import WarningWrongDataTypeNotWritable
 from ingestion.api import MercadoBitcoinAPI
-from boto3 import Session
+from boto3 import Session,Client
 import os
 
 
@@ -46,14 +46,17 @@ class S3Writer(DataWriter):
         self,
         coin: str,
         api: MercadoBitcoinAPI,
-        profile_name: str = "awsadm",
+        profile_name: str = None,
         bucket: str = "demo-data-ingest-2",
     ):
         super().__init__(coin, api)
         self.temp_file = NamedTemporaryFile()
         self.bucket = bucket
         self.profile_name = profile_name
-        self.boto3_client = Session(profile_name=profile_name).client("s3")
+        if not profile_name:
+            self.boto3_client = boto3.client("s3")
+        else:
+            self.boto3_client = Session(profile_name=profile_name).client("s3")
         self.key = f"mercadobitcoin/{self.api.__class__.__name__}/coin={self.coin}/extracted_at={datetime.datetime.now().date()}/mercadobitcoin_{datetime.datetime.now().date()}.json"
 
     def _write_row(self, row: str) -> None:
