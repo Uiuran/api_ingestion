@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Daniel Penalva <dkajah@gmail.com>"]
 readme = "README.md"
-packages = [{include = "api_ingestion"}]
+packages = [{include = "ingestion"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
