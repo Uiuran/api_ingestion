@@ -17,8 +17,6 @@ jobs:
         with:
            python-version: '3.8.0'
       - name: Virtual envs
-        env:
-          VIRTUAL_ENV: venv 
         run: |
           python -m venv venv
           source venv/bin/activate 
@@ -34,5 +32,7 @@ jobs:
       - name: Run Tests
         run: make ci-test  
       - name: Run Deploy
+        env:
+          VIRTUAL_ENV: "/home/runner/work/api_ingestion/venv"
         run: make ci-deploy stage=prod
 
