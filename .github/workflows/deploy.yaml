@@ -16,10 +16,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
            python-version: '3.8.0'
-      - name: Virtual envs
-        run: |
-          python -m venv venv
-          source venv/bin/activate 
       - name: Install deps
         run: make ci-setup
       - name: AWS profile
@@ -33,6 +29,6 @@ jobs:
         run: make ci-test  
       - name: Run Deploy
         env:
-          VIRTUAL_ENV: "/home/runner/work/api_ingestion/venv"
+          VIRTUAL_ENV: "/opt/hostedtoolcache/Python/3.8.0/x64"
         run: make ci-deploy stage=prod
 

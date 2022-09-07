@@ -16,12 +16,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
            python-version: '3.8.0'
-      - name: Virtual envs
-        env:
-          VIRTUAL_ENV: venv
-        run: |
-          python -m venv venv
-          source venv/bin/activate 
       - name: Install deps
         run: make ci-setup
       - name: AWS profile
