@@ -11,7 +11,8 @@ test:
 #CI/CD
 ci-setup:
 	python -m venv venv
-	. venv/bin/activate
+	chmod +x venv/bin/activate
+	bash -c "venv/bin/activate"
 	pip install -r requirements.txt
 	pip install . 
 
