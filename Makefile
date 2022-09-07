@@ -10,10 +10,6 @@ test:
 
 #CI/CD
 ci-setup:
-	python -m venv venv
-	chmod +x venv/bin/activate
-	bash -c "venv/bin/activate"
-	echo ${VIRTUAL_ENV}
 	pip install -r requirements.txt
 	pip install . 
 
