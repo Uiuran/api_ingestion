@@ -2,19 +2,19 @@ clean:
 	rm -rf day-summary *.checkpoint .pytest_cache .coverage .venv/
 
 init: clean
-	pip install poetry 
-	poetry install
+	pip install -r requirements.txt
+	pip install .
 
 test:
-	poetry run python -m pytest
+	python -m pytest
 
 #CI/CD
 ci-setup:
-	pip install poetry
-	poetry install 
+	pip install -r requirements.txt
+	pip install . 
 
 ci-test:
-	poetry run python -m pytest 
+	python -m pytest 
 
 ci-deploy:
-	poetry run zappa update $(stage) || poetry run zappa deploy $(stage)
+	zappa update $(stage) || zappa deploy $(stage)

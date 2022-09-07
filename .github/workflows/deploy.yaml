@@ -27,10 +27,6 @@ jobs:
           secret: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Run Tests
         run: make ci-test  
-      - name: Right version of troposphere
-        run: pip install troposphere==2.7.1
-      - name: Right version of Zappa
-        run: pip install zappa==0.52.0 
       - name: Run Deploy
         run: make ci-deploy stage=prod
 
