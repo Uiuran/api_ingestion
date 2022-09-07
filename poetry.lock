@@ -513,7 +513,7 @@ telegram = ["requests"]
 
 [[package]]
 name = "troposphere"
-version = "2.7.1"
+version = "4.1.0"
 description = "AWS CloudFormation creation library"
 category = "main"
 optional = false
