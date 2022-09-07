@@ -17,6 +17,8 @@ jobs:
         with:
            python-version: '3.8.0'
       - name: Virtual envs
+        env:
+          VIRTUAL_ENV: venv 
         run: |
           python -m venv venv
           source venv/bin/activate 
